@@ -376,11 +376,21 @@ export default Vue.extend({
               type="checkbox"
             />
             <label
-              >Automatically close leftover redirector tabs after 2 seconds:
+              >Automatically close leftover redirector tabs:
               <strong>t.co</strong> (Twitter),
               <strong>outgoing.prod.mozaws.net</strong> (AMO),
               <strong>slack-redir.net</strong> (Slack)</label
             >
+          </div>
+          <div style="margin-left: 20px" v-if="preferences.closeRedirectorTabs.active">
+            <div class="ui">
+              <label>Close after (miliseconds):
+                <input
+                  v-model="preferences.closeRedirectorTabs.delay"
+                  type="number"
+                /></label
+              >
+            </div>
           </div>
         </div>
         <div class="m-b" />
